@@ -1,0 +1,4 @@
+compatibilité ES5/ES6 avec langages + browser: http://kangax.github.io/compat-table/es6/
+
+Module loader utilisant la syntax ES6 (import { cube } from './maths.js';):
+http://rollupjs.org/
