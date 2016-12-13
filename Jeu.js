@@ -1,8 +1,10 @@
 /**
  * Created by Administrateur on 13/12/2016.
  */
+/*NodeJS requires*/
+const readline = require('readline'); //penser à ordonner les require
+/*specific requires*/
 const random = require('./Random.js');
-const readline = require('readline');
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -23,8 +25,6 @@ class Jeu {
             console.log('Vous avez déjà joué : ' + this.essais.join(', '))
         }
 
-        var that = this;
-
         rl.question(`Saisir un entier entre ${this.min} et ${this.max} : `, answer => {
 
             const entierSaisi = Number.parseInt(answer);
@@ -36,12 +36,12 @@ class Jeu {
 
             this.essais.push(entierSaisi);
 
-            if (entierSaisi < that.entierAlea) {
+            if (entierSaisi < this.entierAlea) {
                 console.log('Trop petit');
                 return this.jouer();
             }
 
-            if (entierSaisi > that.entierAlea) {
+            if (entierSaisi > this.entierAlea) {
                 console.log('Trop grand');
                 return this.jouer();
             }
